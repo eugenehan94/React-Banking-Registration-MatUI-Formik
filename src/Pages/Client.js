@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Box, Button, Grid, Typography } from "@material-ui/core";
 
 import backgroundVideo from "../Video/background-video.mp4";
@@ -14,6 +15,13 @@ const useStyles = makeStyles((theme) => ({
   actionMargin: {
     marginTop: theme.spacing(8),
     padding: theme.spacing(10),
+  },
+  lineAlign: {
+    marginTop: theme.spacing(7),
+    marginBottom: theme.spacing(7),
+  },
+  lineMargin: {
+    marginBottom: theme.spacing(10),
   },
 }));
 
@@ -32,14 +40,23 @@ const Client = () => {
             <Typography variant="h3" gutterBottom>
               Already a MatUIBank Client
             </Typography>
-            <hr />
+            <hr className={classes.lineAlign} />
             <Box className={classes.lineMargin}>
-              <Typography variant="h6" gutterBottom>
+              <Typography variant="h5" gutterBottom>
                 Save time by signing onto MatUIBank Online or Mobile banking and
                 we'll complete some of the application for you.
               </Typography>
             </Box>
-            <Button>No, continue with application</Button>
+            <Button
+              variant="contained"
+              color="primary"
+              disableElevation
+              size="large"
+              component={Link}
+              to="form"
+            >
+              No, continue with application
+            </Button>
           </Grid>
           <Grid item xs={5}></Grid>
         </Grid>
