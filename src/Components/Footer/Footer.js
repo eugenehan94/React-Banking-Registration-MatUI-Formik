@@ -8,10 +8,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#272c34",
     paddingLeft: 24,
     paddingRight: 24,
-    position: "absolute",
-    left: 0,
-    bottom: 0,
-    right: 0,
   },
   textColor: {
     color: "#fff",
