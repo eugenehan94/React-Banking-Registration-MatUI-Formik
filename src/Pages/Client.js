@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   actionMargin: {
     marginTop: theme.spacing(8),
     padding: theme.spacing(10),
+    marginBottom: theme.spacing(10),
   },
   lineAlign: {
     marginTop: theme.spacing(7),
@@ -53,7 +54,7 @@ const Client = () => {
               disableElevation
               size="large"
               component={Link}
-              to="form"
+              to="/form"
             >
               No, continue with application
             </Button>
