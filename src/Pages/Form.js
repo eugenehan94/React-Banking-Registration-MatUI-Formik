@@ -5,7 +5,11 @@ import {
   Button,
   Card,
   CardContent,
+  FormControl,
   Grid,
+  MenuItem,
+  InputLabel,
+  Select,
   TextField,
   Typography,
 } from "@material-ui/core";
@@ -18,8 +22,14 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(10),
     marginBottom: theme.spacing(10),
   },
+  inputMargin: {
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1),
+    marginRight: theme.spacing(1),
+  },
 }));
-
+const phoneRegExp =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 const validationSchema = yup.object({
   firstName: yup
     .string("Enter your first name")
@@ -42,13 +52,23 @@ const validationSchema = yup.object({
   birthYear: yup
     .number()
     .typeError("Must be a number")
-    .min(0, "Enter an appropriate year")
+    .min(1000, "Enter an appropriate year")
     .required("Birth year required"),
+  email: yup.string().email("Invalid email").required("Required"),
+  phone: yup
+    .string()
+    .matches(phoneRegExp, "Phone number is not valid")
+    .min(10)
+    .max(10)
+    .required("Required"),
 });
 
 const Form = () => {
   const classes = useStyles();
-
+  const [age, setAge] = React.useState("");
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -56,6 +76,8 @@ const Form = () => {
       birthMonth: "",
       birthDay: "",
       birthYear: "",
+      email: "",
+      phone: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -76,37 +98,42 @@ const Form = () => {
                   <Typography>Let's start with the basics</Typography>
                 </Grid>
                 <Grid item xs={7}>
-                  <Typography>What's your name?</Typography>
-                  <TextField
-                    id="firstName"
-                    name="firstName"
-                    label="First name"
-                    value={formik.values.firstName}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={
-                      formik.touched.firstName &&
-                      Boolean(formik.errors.firstName)
-                    }
-                    helperText={
-                      formik.touched.firstName && formik.errors.firstName
-                    }
-                  />
-                  <br />
-                  <TextField
-                    id="lastName"
-                    name="lastName"
-                    label="Last name"
-                    value={formik.values.lastName}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={
-                      formik.touched.lastName && Boolean(formik.errors.lastName)
-                    }
-                    helperText={
-                      formik.touched.lastName && formik.errors.lastName
-                    }
-                  />
+                  <Typography gutterBottom>What's your name?</Typography>
+                  <Box>
+                    <TextField
+                      className={classes.inputMargin}
+                      id="firstName"
+                      name="firstName"
+                      label="First name"
+                      value={formik.values.firstName}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      error={
+                        formik.touched.firstName &&
+                        Boolean(formik.errors.firstName)
+                      }
+                      helperText={
+                        formik.touched.firstName && formik.errors.firstName
+                      }
+                    />
+                  </Box>
+                  <Box>
+                    <TextField
+                      id="lastName"
+                      name="lastName"
+                      label="Last name"
+                      value={formik.values.lastName}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      error={
+                        formik.touched.lastName &&
+                        Boolean(formik.errors.lastName)
+                      }
+                      helperText={
+                        formik.touched.lastName && formik.errors.lastName
+                      }
+                    />
+                  </Box>
                 </Grid>
               </Grid>
             </CardContent>
@@ -120,6 +147,7 @@ const Form = () => {
                 <Grid item xs={7}>
                   <Typography>What's your birth date?</Typography>
                   <TextField
+                    className={classes.inputMargin}
                     id="birthMonth"
                     name="birthMonth"
                     label="Month(MM)"
@@ -135,6 +163,7 @@ const Form = () => {
                     }
                   />
                   <TextField
+                    className={classes.inputMargin}
                     id="birthDay"
                     name="birthDay"
                     label="Day(DD)"
@@ -149,6 +178,7 @@ const Form = () => {
                     }
                   />
                   <TextField
+                    className={classes.inputMargin}
                     id="birthYear"
                     name="birthYear"
                     label="Year(YYYY)"
@@ -163,6 +193,67 @@ const Form = () => {
                       Boolean(formik.errors.birthYear)
                     }
                   />
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent>
+              <Grid container>
+                <Grid item xs={5}>
+                  <Typography>How can we contact you?</Typography>
+                </Grid>
+                <Grid item xs={7}>
+                  <Typography>What's your contact info?</Typography>
+                  <TextField
+                    className={classes.inputMargin}
+                    id="email"
+                    name="email"
+                    label="Email"
+                    value={formik.values.email}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    helperText={formik.touched.email && formik.errors.email}
+                    error={formik.touched.email && Boolean(formik.errors.email)}
+                  />
+                  <Box>
+                    <FormControl
+                      className={`${classes.formControl} ${classes.inputMargin}`}
+                    >
+                      <InputLabel
+                        shrink
+                        id="demo-simple-select-placeholder-label-label"
+                      >
+                        Phone type
+                      </InputLabel>
+                      <Select
+                        labelId="demo-simple-select-placeholder-label-label"
+                        id="demo-simple-select-placeholder-label"
+                        value={age}
+                        onChange={handleChange}
+                        displayEmpty
+                        className={classes.selectEmpty}
+                      >
+                        <MenuItem value="">
+                          <em>Mobile phone</em>
+                        </MenuItem>
+                        <MenuItem value={1}>Home phone</MenuItem>
+                      </Select>
+                    </FormControl>
+                    <TextField
+                      className={classes.inputMargin}
+                      id="phone"
+                      name="phone"
+                      label="Phone Number (10 digits)"
+                      value={formik.values.phone}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      helperText={formik.touched.phone && formik.errors.phone}
+                      error={
+                        formik.touched.phone && Boolean(formik.errors.phone)
+                      }
+                    />
+                  </Box>
                 </Grid>
               </Grid>
             </CardContent>
