@@ -21,11 +21,23 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(8),
     padding: theme.spacing(10),
     marginBottom: theme.spacing(10),
+    [theme.breakpoints.down("md")]: {
+      padding: theme.spacing(0),
+    },
   },
   inputMargin: {
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
     marginRight: theme.spacing(1),
+
+    [theme.breakpoints.down("sm")]: {
+      marginRight: theme.spacing(0),
+    },
+  },
+  buttonWrapper: {
+    display: "flex",
+    justifyContent: "flex-end",
+    marginTop: theme.spacing(3),
   },
 }));
 const phoneRegExp =
@@ -93,11 +105,11 @@ const Form = () => {
           <Card variant="outlined">
             <CardContent>
               <Grid container>
-                <Grid item xs={5}>
+                <Grid item md={5} xs={12}>
                   <Typography>Hi there!</Typography>
                   <Typography>Let's start with the basics</Typography>
                 </Grid>
-                <Grid item xs={7}>
+                <Grid item md={7} xs={12}>
                   <Typography gutterBottom>What's your name?</Typography>
                   <Box>
                     <TextField
@@ -141,10 +153,10 @@ const Form = () => {
           <Card variant="outlined">
             <CardContent>
               <Grid container>
-                <Grid item xs={5}>
+                <Grid item md={5} xs={12}>
                   <Typography>Tell us a bit about yourself</Typography>
                 </Grid>
-                <Grid item xs={7}>
+                <Grid item md={7} xs={12}>
                   <Typography>What's your birth date?</Typography>
                   <TextField
                     className={classes.inputMargin}
@@ -200,10 +212,10 @@ const Form = () => {
           <Card>
             <CardContent>
               <Grid container>
-                <Grid item xs={5}>
+                <Grid item md={5} xs={12}>
                   <Typography>How can we contact you?</Typography>
                 </Grid>
-                <Grid item xs={7}>
+                <Grid item md={7} xs={12}>
                   <Typography>What's your contact info?</Typography>
                   <TextField
                     className={classes.inputMargin}
@@ -258,9 +270,16 @@ const Form = () => {
               </Grid>
             </CardContent>
           </Card>
-          <Button type="submit" color="primary" variant="contained">
-            Submit
-          </Button>
+          <Box className={classes.buttonWrapper}>
+            <Button
+              type="submit"
+              color="primary"
+              variant="contained"
+              size="large"
+            >
+              Submit
+            </Button>
+          </Box>
         </form>
       </Box>
     </div>
