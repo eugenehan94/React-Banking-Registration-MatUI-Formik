@@ -66,13 +66,13 @@ const validationSchema = yup.object({
     .typeError("Must be a number")
     .min(1000, "Enter an appropriate year")
     .required("Birth year required"),
-  email: yup.string().email("Invalid email").required("Required"),
+  email: yup.string().email("Invalid email").required("Email is srequired"),
   phone: yup
     .string()
     .matches(phoneRegExp, "Phone number is not valid")
-    .min(10)
-    .max(10)
-    .required("Required"),
+    .min(10, "Phone number is not valid")
+    .max(10, "Phone number is not valid")
+    .required("Phone number is required"),
 });
 
 const Form = () => {
