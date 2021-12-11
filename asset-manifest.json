@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/React-Banking-Registration-MatUI-Formik/static/css/main.ef267112.chunk.css",
-    "main.js": "/React-Banking-Registration-MatUI-Formik/static/js/main.828df51d.chunk.js",
-    "main.js.map": "/React-Banking-Registration-MatUI-Formik/static/js/main.828df51d.chunk.js.map",
+    "main.js": "/React-Banking-Registration-MatUI-Formik/static/js/main.baf08328.chunk.js",
+    "main.js.map": "/React-Banking-Registration-MatUI-Formik/static/js/main.baf08328.chunk.js.map",
     "runtime-main.js": "/React-Banking-Registration-MatUI-Formik/static/js/runtime-main.6d20e434.js",
     "runtime-main.js.map": "/React-Banking-Registration-MatUI-Formik/static/js/runtime-main.6d20e434.js.map",
-    "static/js/2.425a90f1.chunk.js": "/React-Banking-Registration-MatUI-Formik/static/js/2.425a90f1.chunk.js",
-    "static/js/2.425a90f1.chunk.js.map": "/React-Banking-Registration-MatUI-Formik/static/js/2.425a90f1.chunk.js.map",
+    "static/js/2.89178c1d.chunk.js": "/React-Banking-Registration-MatUI-Formik/static/js/2.89178c1d.chunk.js",
+    "static/js/2.89178c1d.chunk.js.map": "/React-Banking-Registration-MatUI-Formik/static/js/2.89178c1d.chunk.js.map",
     "static/js/3.8011346b.chunk.js": "/React-Banking-Registration-MatUI-Formik/static/js/3.8011346b.chunk.js",
     "static/js/3.8011346b.chunk.js.map": "/React-Banking-Registration-MatUI-Formik/static/js/3.8011346b.chunk.js.map",
     "index.html": "/React-Banking-Registration-MatUI-Formik/index.html",
     "static/css/main.ef267112.chunk.css.map": "/React-Banking-Registration-MatUI-Formik/static/css/main.ef267112.chunk.css.map",
-    "static/js/2.425a90f1.chunk.js.LICENSE.txt": "/React-Banking-Registration-MatUI-Formik/static/js/2.425a90f1.chunk.js.LICENSE.txt",
+    "static/js/2.89178c1d.chunk.js.LICENSE.txt": "/React-Banking-Registration-MatUI-Formik/static/js/2.89178c1d.chunk.js.LICENSE.txt",
     "static/media/background-video.9302cbc1.mp4": "/React-Banking-Registration-MatUI-Formik/static/media/background-video.9302cbc1.mp4",
     "static/media/credit-card.5710337b.svg": "/React-Banking-Registration-MatUI-Formik/static/media/credit-card.5710337b.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6d20e434.js",
-    "static/js/2.425a90f1.chunk.js",
+    "static/js/2.89178c1d.chunk.js",
     "static/css/main.ef267112.chunk.css",
-    "static/js/main.828df51d.chunk.js"
+    "static/js/main.baf08328.chunk.js"
   ]
 }
