@@ -21,13 +21,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Video = () => {
+const Video = React.memo(() => {
   const classes = useStyles();
 
   const videoRef = useRef(null);
   const [videoState, setVideoState] = useState(true);
 
   const videoAction = () => {
+    console.log("Callback");
     if (videoState === true) {
       setVideoState(false);
       videoRef.current.pause();
@@ -56,6 +57,6 @@ const Video = () => {
       </Box>
     </div>
   );
-};
+});
 
 export default Video;

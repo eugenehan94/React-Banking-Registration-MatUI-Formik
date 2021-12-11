@@ -1,13 +1,17 @@
 import React from "react";
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Toolbar } from "@material-ui/core";
+
 import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
+import { useNavigate } from "react-router-dom";
+
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <AppBar position="fixed">
         <Toolbar>
-          <Typography variant="h4">Bank</Typography>
-          <AccountBalanceIcon fontSize="large" />
+          <AccountBalanceIcon fontSize="large" onClick={() => navigate("/")} />
         </Toolbar>
       </AppBar>
     </div>

@@ -57,10 +57,10 @@ const Client = () => {
               component={Link}
               to="/form"
             >
-              No, continue with application
+              Continue with application
             </Button>
           </Grid>
-          <Grid item md={5} xs={0}></Grid>
+          <Grid item md={5} xs={1}></Grid>
         </Grid>
       </Box>
       <Footer />
