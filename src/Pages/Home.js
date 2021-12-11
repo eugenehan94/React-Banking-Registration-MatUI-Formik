@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Button, Chip, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import backgroundVideo from "../Video/background-video.mp4";
+
 import NavBar from "../Components/Navbar/Navbar";
+import Video from "../Components/Video/Video";
 import Footer from "../Components/Footer/Footer";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import creditCardSVG from "../SVG/credit-card.svg";
@@ -12,14 +13,25 @@ const useStyles = makeStyles((theme) => ({
     position: "fixed",
     zIndex: "-1",
     width: "100%",
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
   actionMargin: {
     marginTop: theme.spacing(8),
     padding: theme.spacing(10),
+    [theme.breakpoints.down("md")]: {
+      marginTop: theme.spacing(0),
+      paddingLeft: theme.spacing(1),
+      paddingRight: theme.spacing(1),
+    },
   },
   lineAlign: {
     marginTop: theme.spacing(5),
     marginBottom: theme.spacing(5),
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
 }));
 
@@ -29,21 +41,20 @@ const Home = () => {
   return (
     <div>
       <NavBar />
-      <video autoPlay loop muted id="video" className={classes.video}>
-        <source src={backgroundVideo} type="video/mp4" />
-      </video>
+      <Video />
       <Box className={classes.actionMargin}>
         <Grid container>
-          <Grid item xs={7}>
+          <Grid item md={7} xs={12}>
             <Typography variant="h2" gutterBottom>
               Get started and get banking
             </Typography>
+
             <Typography variant="h5">
               This should only take about 5 minutes
             </Typography>
             <hr className={classes.lineAlign} />
             <Grid container spacing={2}>
-              <Grid item xs={6}>
+              <Grid item md={6} xs={12}>
                 <Box>
                   <img
                     src={creditCardSVG}
@@ -52,7 +63,7 @@ const Home = () => {
                   />
                 </Box>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item md={6} xs={12}>
                 <Typography variant="h5" gutterBottom>
                   MatUI Adventure Visa Infinity* Card
                 </Typography>
@@ -61,7 +72,7 @@ const Home = () => {
                   Join and get over $1500 in value!
                 </Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item md={6} xs={12}>
                 <Button
                   fullWidth
                   variant="contained"
@@ -75,7 +86,7 @@ const Home = () => {
                 </Button>
               </Grid>
 
-              <Grid item xs={6}></Grid>
+              <Grid item md={6} xs={12}></Grid>
 
               <Grid item xs={12}>
                 <Box style={{ display: "flex" }}>

@@ -16,6 +16,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import Footer from "../Components/Footer/Footer";
 const useStyles = makeStyles((theme) => ({
   actionMargin: {
     marginTop: theme.spacing(8),
@@ -110,7 +111,9 @@ const Form = () => {
                   <Typography>Let's start with the basics</Typography>
                 </Grid>
                 <Grid item md={7} xs={12}>
-                  <Typography gutterBottom>What's your name?</Typography>
+                  <Typography variant="h3" gutterBottom>
+                    What's your name?
+                  </Typography>
                   <Box>
                     <TextField
                       className={classes.inputMargin}
@@ -157,7 +160,9 @@ const Form = () => {
                   <Typography>Tell us a bit about yourself</Typography>
                 </Grid>
                 <Grid item md={7} xs={12}>
-                  <Typography>What's your birth date?</Typography>
+                  <Typography gutterBottom variant="h3">
+                    What's your birth date?
+                  </Typography>
                   <TextField
                     className={classes.inputMargin}
                     id="birthMonth"
@@ -216,7 +221,9 @@ const Form = () => {
                   <Typography>How can we contact you?</Typography>
                 </Grid>
                 <Grid item md={7} xs={12}>
-                  <Typography>What's your contact info?</Typography>
+                  <Typography variant="h3" gutterBottom>
+                    What's your contact info?
+                  </Typography>
                   <TextField
                     className={classes.inputMargin}
                     id="email"
@@ -282,6 +289,7 @@ const Form = () => {
           </Box>
         </form>
       </Box>
+      <Footer />
     </div>
   );
 };

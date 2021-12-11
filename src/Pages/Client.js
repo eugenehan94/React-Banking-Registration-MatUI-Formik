@@ -2,24 +2,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Button, Grid, Typography } from "@material-ui/core";
 
-import backgroundVideo from "../Video/background-video.mp4";
 import { makeStyles } from "@material-ui/core/styles";
 import Navbar from "../Components/Navbar/Navbar";
+import Video from "../Components/Video/Video";
 import Footer from "../Components/Footer/Footer";
 const useStyles = makeStyles((theme) => ({
-  video: {
-    position: "fixed",
-    zIndex: "-1",
-    width: "100%",
-  },
   actionMargin: {
     marginTop: theme.spacing(8),
     padding: theme.spacing(10),
     marginBottom: theme.spacing(10),
+    [theme.breakpoints.down("md")]: {
+      marginTop: theme.spacing(0),
+      paddingLeft: theme.spacing(1),
+      paddingRight: theme.spacing(1),
+    },
   },
   lineAlign: {
     marginTop: theme.spacing(7),
     marginBottom: theme.spacing(7),
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
   lineMargin: {
     marginBottom: theme.spacing(10),
@@ -32,12 +35,10 @@ const Client = () => {
     <div>
       {" "}
       <Navbar />
-      <video autoPlay loop muted id="video" className={classes.video}>
-        <source src={backgroundVideo} type="video/mp4" />
-      </video>
+      <Video />
       <Box className={classes.actionMargin}>
         <Grid container>
-          <Grid item xs={7}>
+          <Grid item md={7} xs={12}>
             <Typography variant="h3" gutterBottom>
               Already a MatUIBank Client
             </Typography>
@@ -59,7 +60,7 @@ const Client = () => {
               No, continue with application
             </Button>
           </Grid>
-          <Grid item xs={5}></Grid>
+          <Grid item md={5} xs={0}></Grid>
         </Grid>
       </Box>
       <Footer />
