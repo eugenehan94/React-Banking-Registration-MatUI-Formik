@@ -3,6 +3,13 @@ https://eugenehan94.github.io/React-Banking-Registration-MatUI-Formik/#/
 
 
 
+
+
+## Form Page
+https://user-images.githubusercontent.com/59939048/145696766-8425db15-0afb-4321-82c3-8a5f5a25a1e7.mp4
+
+
+
 ---------------------------------------------------------------------------------------------------------------------
 # Getting Started with Create React App
 
