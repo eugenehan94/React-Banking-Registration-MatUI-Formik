@@ -3,10 +3,17 @@ https://eugenehan94.github.io/React-Banking-Registration-MatUI-Formik/#/
 
 
 
+## Home Page
+![MatUIPage1](https://user-images.githubusercontent.com/59939048/145696821-81a4919e-2d3b-496c-ac83-209fafbbe2df.gif)
+
+
+## Client Page
+![MatUIPage2](https://user-images.githubusercontent.com/59939048/145697008-3b75fcab-e5a4-4b5e-9197-318e5a404f3d.gif)
 
 
 ## Form Page
-https://user-images.githubusercontent.com/59939048/145696766-8425db15-0afb-4321-82c3-8a5f5a25a1e7.mp4
+![MatUIPage3](https://user-images.githubusercontent.com/59939048/145697010-2ef904b6-b4b1-4191-87b9-744ad08a7f05.gif)
+
 
 
 
