@@ -1,3 +1,23 @@
+# Banking Registration Form 
+https://eugenehan94.github.io/React-Banking-Registration-MatUI-Formik/#/
+
+
+
+## Home Page
+![MatUIPage1](https://user-images.githubusercontent.com/59939048/145696821-81a4919e-2d3b-496c-ac83-209fafbbe2df.gif)
+
+
+## Client Page
+![MatUIPage2](https://user-images.githubusercontent.com/59939048/145697008-3b75fcab-e5a4-4b5e-9197-318e5a404f3d.gif)
+
+
+## Form Page
+![MatUIPage3](https://user-images.githubusercontent.com/59939048/145697010-2ef904b6-b4b1-4191-87b9-744ad08a7f05.gif)
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
